@@ -25,10 +25,12 @@ function merge_package() {
 }
 
 #merge_package main https://github.com/shiyu1314/openwrt-onecloud target/linux kernel/6.6/amlogic
-merge_package master https://github.com/SySS-Research/clone-cert . *
+#merge_package master https://github.com/SySS-Research/clone-cert . *
+git clone --depth 1 https://github.com/SySS-Research/clone-cert
 
 # patch
-#sed -i 's/https:\/\/bing.com/https:\/\/dl.delivery.mp.microsoft.com/g' install-socks5-hysteria.sh
+sed -i 's/.cert/.crt/g' clone-cert.sh
+sed -i 's\/tmp\/etc/tls.d\g' clone-cert.sh
 #sed -i 's/hysteria-freebsd-arm64/hysteria-freebsd-arm64-avx/g' install-socks5-hysteria.sh
 #sed -i 's/hysteria-freebsd-amd64/hysteria-freebsd-amd64-avx/g' install-socks5-hysteria.sh
 #sed -i '4d' luci-app-wechatpush/root/usr/share/luci/menu.d/luci-app-wechatpush.json
