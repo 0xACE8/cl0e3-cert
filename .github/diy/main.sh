@@ -25,7 +25,7 @@ function merge_package() {
 }
 
 #merge_package main https://github.com/shiyu1314/openwrt-onecloud target/linux kernel/6.6/amlogic
-merge_package master https://github.com/SySS-Research/clone-cert .
+merge_package master https://github.com/SySS-Research/clone-cert . *
 
 # patch
 #sed -i 's/https:\/\/bing.com/https:\/\/dl.delivery.mp.microsoft.com/g' install-socks5-hysteria.sh
