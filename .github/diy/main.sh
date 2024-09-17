@@ -17,7 +17,7 @@ mv -n `find $1/* -maxdepth 0 -type d` ./
 rm -rf $1
 }
 
-git clone --depth 1 https://github.com/SySS-Research/clone-cert cc && mv -n cc/*.*/ && mv -n cc/*/ ./; rm -rf cc
+git clone --depth 1 https://github.com/SySS-Research/clone-cert cc && mv -n cc/{test,clone-cert.sh} ./; rm -rf cc
 
 # patch
 sed -i 's/${CERT}.cert/${CERT}.crt/g' clone-cert.sh
