@@ -21,7 +21,8 @@ rm -rf $1
 git clone --depth 1 https://github.com/SySS-Research/clone-cert cc && mv -n cc/*/ ./; rm -rf cc
 
 # patch
-sed -i 's/.cert/.crt/g' clone-cert.sh
+sed -i 's/${CERT}.cert/${CERT}.crt/g' clone-cert.sh
+sed -i 's/${CERT}.CA.cert/${CERT}.CA.crt/g' clone-cert.sh
 sed -i 's\/tmp\/etc/tls.d\g' clone-cert.sh
 #sed -i 's/hysteria-freebsd-arm64/hysteria-freebsd-arm64-avx/g' install-socks5-hysteria.sh
 #sed -i 's/hysteria-freebsd-amd64/hysteria-freebsd-amd64-avx/g' install-socks5-hysteria.sh
