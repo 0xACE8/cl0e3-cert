@@ -5,8 +5,8 @@ on:
     paths:
       - '.github/workflows/sync.yml'
       - '.github/diy/main.sh'
-  schedule:
-    - cron: 0 */4 * * *
+#  schedule:
+#    - cron: 0 */4 * * *
   repository_dispatch:
   workflow_dispatch:
     inputs:
